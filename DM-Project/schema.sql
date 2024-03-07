@@ -10,7 +10,7 @@ DROP TABLE IF EXISTS "MaintenanceRecords";
 -- Buses Table
 CREATE TABLE IF NOT EXISTS "Buses" (
     "BusID" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "RegistrationNumber" TEXT NOT NULL,
+    "RegistrationNumber" TEXT NOT NULL UNIQUE,
     "Capacity" INTEGER NOT NULL,
     "Type" TEXT NOT NULL,
     "DriverID" INTEGER,
