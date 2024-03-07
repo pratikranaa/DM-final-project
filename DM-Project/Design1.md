@@ -1,4 +1,6 @@
-# Design Document for Chandigarh Transport Undertaking (CTU) Database
+# Data Mining Project 01
+
+# Database Design for Chandigarh Transport Undertaking (CTU)
 
 ## Scope
 
