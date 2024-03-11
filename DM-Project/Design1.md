@@ -94,9 +94,37 @@ The MaintenanceRecords table includes:
 * Details: Details of the maintenance performed as TEXT, for record-keeping and analysis.
 * Cost: The cost of maintenance as REAL, for financial tracking and budgeting.
 
-### Relationships
+### Entity-Relationships
 
-The design incorporates relationships between entities to ensure data integrity and relational integrity. These relationships are enforced through FOREIGN KEY constraints, linking buses to drivers, schedules to routes, buses, and drivers, and tickets to schedules and passengers. Additionally, maintenance records are linked to specific buses.
+To create an Entity-Relationship (ER) diagram for the Chandigarh Transport Undertaking (CTU) database, you'll need to understand the relationships between the entities involved. Here's a breakdown of the relationships, which will help you in drawing the ER diagram:
+
+#### Buses to Drivers (One-to-One Relationship):
+
+A bus is assigned to a primary driver, indicating a one-to-one relationship. However, if the database allows for the possibility that a bus can be driven by different drivers at different times (and not simultaneously), then it could be considered a one-to-many relationship from the Drivers to the Buses. For simplicity, if we stick to the primary driver concept, it remains one-to-one but consider how you might represent it based on your understanding of CTU's operations.
+
+#### Buses to Schedules (One-to-Many Relationship):
+
+A bus can be scheduled for multiple routes at different times, indicating a one-to-many relationship between Buses and Schedules. Each schedule entry is unique to a bus at a given time.
+
+#### Drivers to Schedules (One-to-Many Relationship):
+
+Similar to buses, a driver can be assigned to drive different schedules (routes at different times), representing a one-to-many relationship between Drivers and Schedules.
+
+#### Routes to Schedules (One-to-Many Relationship):
+
+A particular route can have multiple schedules, indicating a one-to-many relationship between Routes and Schedules. This allows for the same route to be driven multiple times a day or week by different buses and drivers.
+
+#### Passengers to Tickets (One-to-Many Relationship):
+
+A passenger can purchase multiple tickets for different schedules, indicating a one-to-many relationship between Passengers and Tickets.
+
+#### Schedules to Tickets (One-to-Many Relationship):
+
+Each schedule (specific route and time) can have multiple tickets sold for it, showing a one-to-many relationship between Schedules and Tickets. Each ticket is unique to a schedule and a passenger.
+
+#### Buses to MaintenanceRecords (One-to-Many Relationship):
+
+A bus can have multiple maintenance records, indicating a one-to-many relationship between Buses and MaintenanceRecords. This relationship tracks the maintenance history of each bus.
 
 ### Optimizations
 
